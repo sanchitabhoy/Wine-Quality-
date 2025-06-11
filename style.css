@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+.image {
+        position: absolute;
+        top: 4%;   /* Aligns to the top */
+        right: 5%; /* Aligns to the right */ 
+}
+      
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+header .navbar{
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar .menu-links{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover{
+    color: rgb(119, 2, 2);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensures content starts at the top */
+    align-items: flex-start; /* Aligns content to the left */
+    height: 100vh; /* Full screen height */
+    padding: 20px; /* Some padding from the edges */
+}
+
+
+.hero-section .content {
+    color: #fff;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0; /* Remove extra spacing */
+    margin: 0; /* Remove auto centering */
+}
+
+
+
+.hero-section .content h1{
+    margin-top: 35px;
+    font-size: 3rem;
+    max-width: 600px;
+}
+
+.hero-section .content p{
+    font-weight: 300;
+    margin-top: 45px;
+    max-width: 600px;
+}
+
+#startPrediction {
+    background-color: #fff;
+    color: rgb(119, 2, 2);
+    margin-top: 55px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#startPrediction:hover {
+    background: rgb(119, 2, 2);
+    color: #fff;
+}
+
+
+
+

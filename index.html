@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <link rel="stylesheet" href="path to your css file">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="menu-links">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Locations</a></li>
+               <li><a href="#">Contact</a></li>
+               <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="content">
+            <h1>Wine Quality</h1>
+            <p>The quality of wine is crucial as it directly affects its taste, aroma, and overall enjoyment. A high-quality
+                 wine offers a well-balanced combination of acidity, tannins, and sweetness, enhancing the drinking experience.
+                  It develops complex flavors and aromas, making each sip more enjoyable and memorable. On the other hand, 
+                  poor-quality wine may taste unbalanced, overly acidic, or artificial, diminishing the overall experience.
+                   Factors such as grape quality, winemaking techniques, and storage conditions play a vital role in 
+                   determining a wine's quality.Thus,investing in quality wine ensures not only a better immediate experience but also long-term enjoyment and 
+                   value.</p>
+            <button id="startPrediction">Start Prediction</button>
+        </div>
+    </section>
+
+        <img class="image" src="wine.jpg" width="25%" height="75%">
+        
+
+    <script>
+            document.getElementById("startPrediction").addEventListener("click", function() {
+                window.location.href = "predict.html";  // Redirects to predict.html
+            });
+    </script>
+</body>
+</html>

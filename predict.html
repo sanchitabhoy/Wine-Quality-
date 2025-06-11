@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Wine Quality Model</h2>
+        <form id="WineForm">
+            <input type="number" id="fixed-acidity" placeholder="Fixed Acidity" required>
+            <input type="number" id="volatile-acidity" placeholder="Volatile Acidity" required>
+            <input type="number" id="citric-acid" placeholder="Citric Acid" required>
+            <input type="number" id="residual-sugar" placeholder="Residual Sugar" required>
+            <input type="number" id="chlorides" placeholder="Chlorides" required>
+            <input type="number" id="free-sulfur-dioxide" placeholder="Free Sulfur Dioxide" required>
+            <input type="number" id="total-sulfur-dioxide" placeholder="Total Sulfur Dioxide" required>
+            <input type="number" id="density" placeholder="Density" required>
+            <input type="number" id="pH" placeholder="pH" required>
+            <input type="number" id="sulphates" placeholder="Sulphates" required>
+            <input type="number" id="alcohol" placeholder="Alcohol" required>
+            
+            <button id="predictButton" type="button">Predict</button>
+
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function predictWineQuality() {
+            // Collect input values from the form
+            let features = [];
+            for (let i = 1; i <= 11; i++) {
+                let value = document.getElementById(`feature${i}`).value;
+                features.push(parseFloat(value));
+            }
+
+            // Send data to FastAPI backend
+            const response = await fetch("http://127.0.0.1:8001/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ features: features })
+            });
+
+            const data = await response.json();
+            document.getElementById("result").innerText = `Wine Quality: ${data.wine_quality}`;
+        }
+    </script>
+    
+</body>
+</html>
